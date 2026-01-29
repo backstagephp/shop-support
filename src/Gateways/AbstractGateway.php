@@ -2,12 +2,8 @@
 
 namespace Backstage\Shop\Support\Gateways;
 
-use Backstage\Shop\Checkout\PaymentResult;
 use Backstage\Shop\Support\Contracts\PaymentGateway;
 use Backstage\Shop\Support\Contracts\PaymentResult as PaymentResultContract;
-use Backstage\Shop\Models\Customer;
-use Backstage\Shop\Models\Order;
-use Backstage\Shop\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractGateway implements PaymentGateway
@@ -67,6 +63,8 @@ abstract class AbstractGateway implements PaymentGateway
 
     abstract public function listPrices(string $gatewayProductId): array;
 
+    abstract protected function createResult(string $id, string $status, int $amount, string $currency, array $rawData = [], ?string $redirectUrl = null, ?string $errorMessage = null): PaymentResultContract;
+
     public function supports(string $feature): bool
     {
         return in_array($feature, $this->supportedFeatures);
@@ -75,25 +73,5 @@ abstract class AbstractGateway implements PaymentGateway
     protected function getConfig(string $key, mixed $default = null): mixed
     {
         return $this->config[$key] ?? $default;
-    }
-
-    protected function createResult(
-        string $id,
-        string $status,
-        int $amount,
-        string $currency,
-        array $rawData = [],
-        ?string $redirectUrl = null,
-        ?string $errorMessage = null,
-    ): PaymentResultContract {
-        return new PaymentResult(
-            id: $id,
-            status: $status,
-            amount: $amount,
-            currency: $currency,
-            rawData: $rawData,
-            redirectUrl: $redirectUrl,
-            errorMessage: $errorMessage,
-        );
     }
 }
