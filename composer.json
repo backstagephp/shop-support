@@ -48,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Backstage\\Shop\\Contracts\\ShopContractsServiceProvider"
+                "Backstage\\Shop\\Support\\ShopContractsServiceProvider"
             ],
             "aliases": {
-                "AvailableCheckoutDrivers": "Backstage\\Shop\\Contracts\\Facades\\AvailableCheckoutDrivers"
+                "AvailableCheckoutDrivers": "Backstage\\Shop\\Support\\Facades\\AvailableCheckoutDrivers"
             }
         }
     },
