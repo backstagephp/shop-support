@@ -1,12 +1,12 @@
 {
-    "name": "backstage/shop-contracts",
-    "description": "Shop contracts",
+    "name": "backstage/shop-support",
+    "description": "Shop support",
     "keywords": [
         "Backstage",
         "laravel",
-        "shop-contracts"
+        "shop-support"
     ],
-    "homepage": "https://github.com/backstage/shop-contracts",
+    "homepage": "https://github.com/backstage/shop-support",
     "license": "MIT",
     "authors": [
         {
@@ -17,26 +17,16 @@
     ],
     "require": {
         "php": "^8.4",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^11.0||^12.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.14",
-        "nunomaduro/collision": "^8.8",
-        "orchestra/testbench": "^10.0.0||^9.0.0",
-        "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-arch": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0"
+        "laravel/framework": "^10.0 || ^11.0 || ^12.0",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "autoload": {
         "psr-4": {
-            "Backstage\\ShopContracts\\": "src/",
-            "Backstage\\ShopContracts\\Database\\Factories\\": "database/factories/"
+            "Backstage\\Shop\\Support\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Backstage\\ShopContracts\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -58,10 +48,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Backstage\\ShopContracts\\ShopContractsServiceProvider"
+                "Backstage\\Shop\\Support\\ShopContractsServiceProvider"
             ],
             "aliases": {
-                "ShopContracts": "Backstage\\ShopContracts\\Facades\\ShopContracts"
+                "AvailableCheckoutDrivers": "Backstage\\Shop\\Support\\Facades\\AvailableCheckoutDrivers"
             }
         }
     },
