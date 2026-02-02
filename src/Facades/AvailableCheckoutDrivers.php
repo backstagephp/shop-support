@@ -2,8 +2,8 @@
 
 namespace Backstage\Shop\Support\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Backstage\Shop\Support\CheckoutDriver;
+use Illuminate\Support\Facades\Facade;
 
 /**
  * @method static CheckoutDriver setupDriver(string $driver, string $driverClass)
