@@ -3,7 +3,6 @@
 namespace Backstage\Shop\Support;
 
 use Spatie\LaravelPackageTools\Package;
-use Backstage\Shop\Support\CheckoutDriver;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ShopContractsServiceProvider extends PackageServiceProvider
