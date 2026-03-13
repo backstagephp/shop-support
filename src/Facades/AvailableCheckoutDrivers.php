@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool hasDriver(string $driver)
  * @method static string|null getDriver(string $driver)
  *
- * @see \Backstage\Shop\Support\CheckoutDriver
+ * @see CheckoutDriver
  */
 class AvailableCheckoutDrivers extends Facade
 {

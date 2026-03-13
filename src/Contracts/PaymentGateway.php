@@ -2,6 +2,9 @@
 
 namespace Backstage\Shop\Support\Contracts;
 
+use Backstage\Shop\Models\Customer;
+use Backstage\Shop\Models\Order;
+use Backstage\Shop\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 
 interface PaymentGateway
@@ -14,7 +17,7 @@ interface PaymentGateway
     /**
      * Create a payment for an order.
      *
-     * @param  \Backstage\Shop\Models\Order  $order
+     * @param  Order  $order
      */
     public function createPayment(Model $order, array $options = []): PaymentResult;
 
@@ -31,7 +34,7 @@ interface PaymentGateway
     /**
      * Create a customer in the payment gateway.
      *
-     * @param  \Backstage\Shop\Models\Customer  $customer
+     * @param  Customer  $customer
      */
     public function createCustomer(Model $customer): string;
 
@@ -78,7 +81,7 @@ interface PaymentGateway
     /**
      * Create a product in the payment gateway.
      *
-     * @param  \Backstage\Shop\Models\Product  $product
+     * @param  Product  $product
      */
     public function createProduct(Model $product): string;
 
@@ -90,7 +93,7 @@ interface PaymentGateway
     /**
      * Update a product in the payment gateway.
      *
-     * @param  \Backstage\Shop\Models\Product  $product
+     * @param  Product  $product
      */
     public function updateProduct(string $gatewayProductId, Model $product): bool;
 
@@ -102,14 +105,14 @@ interface PaymentGateway
     /**
      * Sync a product to the payment gateway (create or update).
      *
-     * @param  \Backstage\Shop\Models\Product  $product
+     * @param  Product  $product
      */
     public function syncProduct(Model $product): string;
 
     /**
      * Create a price for a product in the payment gateway.
      *
-     * @param  \Backstage\Shop\Models\Product  $product
+     * @param  Product  $product
      */
     public function createPrice(Model $product, int $amount, string $currency, array $options = []): string;
 
@@ -131,7 +134,7 @@ interface PaymentGateway
     /**
      * Sync a price to the payment gateway (create or update).
      *
-     * @param  \Backstage\Shop\Models\Product  $product
+     * @param  Product  $product
      */
     public function syncPrice(Model $product, int $amount, string $currency, array $options = []): string;
 
