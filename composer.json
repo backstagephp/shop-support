@@ -10,6 +10,11 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Mark van Eijk",
+            "email": "mark@backstagephp.com",
+            "role": "Owner & Developer"
+        },
+        {
             "name": "Manoj Hortulanus",
             "email": "manoj@backstagephp.com",
             "role": "Developer"
